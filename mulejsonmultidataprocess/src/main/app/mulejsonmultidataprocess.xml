@@ -10,7 +10,7 @@ http://www.mulesoft.org/schema/mule/xml http://www.mulesoft.org/schema/mule/xml/
     <http:listener-config name="HTTP_Listener_Configuration" host="0.0.0.0" port="8081" doc:name="HTTP Listener Configuration"/>
     <flow name="mulejsonmultidataprocessFlow">
         <http:listener config-ref="HTTP_Listener_Configuration" path="/multijson" doc:name="HTTP"/>
-        <logger message="Inside the Flow #[payload]" level="INFO" doc:name="Logger"/>
+        <logger message="Start the Flow #[payload]" level="INFO" doc:name="Logger"/>
         <foreach collection="#[json:]" doc:name="For Each">
             <set-variable variableName="empid" value="#[json:eid]" doc:name="Variable"/>
             <set-variable variableName="ename" value="#[json:ename]" doc:name="Variable"/>
